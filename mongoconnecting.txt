@@ -1,0 +1,70 @@
+To check mongodb data within ec2 instance
+
+1) login to the ec2 instance using ssh key
+
+
+$ ssh -i "adroit.pem" ubuntu@ec2-54-213-78-160.us-west-2.compute.amazonaws.com
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-1052-aws x86_64)
+
+
+2) After connecting to instance....type command $mongo for connecting to mongo server
+
+
+ubuntu@ip-172-31-33-234:~$ mongo
+MongoDB shell version v3.6.2
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.6.2
+Server has startup warnings:
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten]
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten]
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten]
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten]
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2018-02-28T05:57:21.956+0000 I CONTROL  [initandlisten]
+
+
+3)For checking databases in mongo use command
+
+> show dbs
+admin        0.078GB
+config       0.078GB
+holidaysway  0.078GB
+local        0.078GB
+
+
+> use holidaysway
+switched to db holidaysway
+
+
+> show collections
+advertises
+airports
+citybreaks
+contacts
+csvs
+enquiries
+handpickeds
+histories
+menus
+pages
+populars
+providers
+relatedplaces
+settings
+sponsors
+system.indexes
+users
+
+> db.airports.find()   (for checking collections)
+
+
+
+
+
+
+
